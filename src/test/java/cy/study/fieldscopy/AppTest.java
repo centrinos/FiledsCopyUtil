@@ -1,4 +1,4 @@
-package com.csssi.fieldconverter;
+package cy.study.fieldscopy;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

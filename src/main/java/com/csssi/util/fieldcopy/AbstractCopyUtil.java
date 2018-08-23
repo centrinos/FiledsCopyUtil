@@ -1,4 +1,4 @@
-package com.csssi.util.fieldconverter;
+package com.csssi.util.fieldcopy;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -8,28 +8,28 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.csssi.util.fieldconverter.adapter.AbstractFieldAdapter;
-import com.csssi.util.fieldconverter.adapter.DefaultFieldAdapter;
-import com.csssi.util.fieldconverter.adapter.FieldConvertException;
+import com.csssi.util.fieldcopy.adapter.AbstractFieldAdapter;
+import com.csssi.util.fieldcopy.adapter.DefaultFieldAdapter;
+import com.csssi.util.fieldcopy.adapter.FieldsCopyException;
 
-public abstract class AbstractConvertUtil implements ConvertFields {
+public abstract class AbstractCopyUtil implements CopyFields {
 
-	private static final Logger logger = LoggerFactory.getLogger(AbstractConvertUtil.class);
+	private static final Logger logger = LoggerFactory.getLogger(AbstractCopyUtil.class);
 
 	protected AbstractFieldAdapter adapter = new DefaultFieldAdapter();
 
-	public <T> T convert(Object src, Class<T> tgtClazz) throws FieldConvertException {
+	public <T> T convert(Object src, Class<T> tgtClazz) throws FieldsCopyException {
 		T retVal = null;	
 			try {
 				retVal = tgtClazz.newInstance();
 			} catch (InstantiationException | IllegalAccessException e) {
-				throw new FieldConvertException(e.toString());
+				throw new FieldsCopyException(e.toString());
 			}
 		doConverts(src, retVal, tgtClazz);
 		return retVal;
 	}
 
-	protected void doConverts(Object src, Object tgt, Class<?> tgtClazz) throws FieldConvertException {
+	protected void doConverts(Object src, Object tgt, Class<?> tgtClazz) throws FieldsCopyException {
 		Class<? extends Object> srcClszz = src.getClass();
 		Field[] tgtFields = tgtClazz.getDeclaredFields();
 		List<Field> srcFields = Arrays.asList(srcClszz.getDeclaredFields());

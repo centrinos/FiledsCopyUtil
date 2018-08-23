@@ -1,13 +1,13 @@
-package com.csssi.util.fieldconverter.mapper;
+package com.csssi.util.fieldcopy.mapper;
 
 import java.lang.reflect.Field;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.csssi.util.fieldconverter.annotation.Convert;
-import com.csssi.util.fieldconverter.annotation.Mapper;
-import com.csssi.util.fieldconverter.annotation.TypeConverter;
+import com.csssi.util.fieldcopy.annotation.Convert;
+import com.csssi.util.fieldcopy.annotation.Mapper;
+import com.csssi.util.fieldcopy.annotation.TypeConverter;
 
 public class DefaultFieldMapper implements FieldMapper {
 

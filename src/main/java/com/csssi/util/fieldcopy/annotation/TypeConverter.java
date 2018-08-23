@@ -1,4 +1,4 @@
-package com.csssi.util.fieldconverter.annotation;
+package com.csssi.util.fieldcopy.annotation;
 
 public interface TypeConverter<S,T> {
 	

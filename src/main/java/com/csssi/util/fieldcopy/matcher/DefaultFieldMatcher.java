@@ -1,4 +1,4 @@
-package com.csssi.util.fieldconverter.matcher;
+package com.csssi.util.fieldcopy.matcher;
 
 
 public class DefaultFieldMatcher implements FieldMatcher {

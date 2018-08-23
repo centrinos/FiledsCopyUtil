@@ -1,8 +1,8 @@
-package com.csssi.util.fieldconverter.mapper;
+package com.csssi.util.fieldcopy.mapper;
 
 import java.lang.reflect.Field;
 
-import com.csssi.util.fieldconverter.annotation.TypeConverter;
+import com.csssi.util.fieldcopy.annotation.TypeConverter;
 
 public interface FieldMapper {
 
